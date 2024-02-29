@@ -1,3 +1,22 @@
+
+- VANESA PRECILLA WEB CODING EXERCISES 
+Date: 2/29/2024 (Start & Completed)
+
+Live Demo:
+
+Built with :
+- Nextjs (Reactjs)
+- Javascript
+- Taiwlwind CSS
+- HTML
+- CSS
+- Consume the Web API Endpoint JSON Link
+- Map the JSON and display it according to html tag within the JSON file 
+- Responsive for Desktop, Tablet & Mobile
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
