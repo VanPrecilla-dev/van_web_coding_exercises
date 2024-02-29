@@ -17,7 +17,7 @@ const NavBar = () => {
         {/* I used Link to navigate the website */}
         <Link
           href="/"
-          className={`hover:bg-orange-300 active:bg-red-500   py-2 px-5 rounded-3xl ${
+          className={`hover:bg-orange-300 active:bg-red-500  font-bold py-2 px-5 rounded-3xl ${
             currentRoute === "/" ? "underline" : " no-underline"
           }`}
         >
@@ -25,7 +25,7 @@ const NavBar = () => {
         </Link>
         <Link
           href="/about"
-          className={`hover:bg-orange-300 active:bg-red-500 py-2 px-5 rounded-3xl ${
+          className={`hover:bg-orange-300 active:bg-red-500 font-bold  py-2 px-5 rounded-3xl ${
             currentRoute === "/about" ? "underline" : " no-underline"
           }`}
         >
