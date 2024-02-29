@@ -2,7 +2,6 @@
 - VANESA PRECILLA WEB CODING EXERCISES 
 Date: 2/29/2024 (Start & Completed)
 
-Please Click Here for the Live Demo of the Website: https://van-web-coding-exercises.vercel.app/
 
 Built with :
 - Nextjs (Reactjs)

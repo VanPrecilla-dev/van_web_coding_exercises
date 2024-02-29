@@ -2,15 +2,21 @@ import React from "react";
 
 //fetch JSON data from an Endpoint,
 async function getHomeData() {
-  const res = await fetch("https://www.zesty.io/-/gql/platform_section.json");
-  const dataFetch = res.json();
 
-  if (res.ok) {
-    console.log("sucess fetch of data");
-    return dataFetch;
-  } else {
-    throw new Error("Failed to fetch Data");
+  try{
+    const res = await fetch("https://www.zesty.io/-/gql/platform_section.json");
+    const dataFetch = res.json();
+  
+    if (res.ok) {
+      console.log("sucess fetch of data");
+      return dataFetch;
+    } else {
+      console.error("Failed to fetch Data");
+    }
+  }catch(error){
+    console.error("Failed HTTP Fetching Data", error)
   }
+ 
 }
 
 //Home Page Component and path is '/' , will consume the above function for fetching the json from endpoint
@@ -25,8 +31,7 @@ const Home = async () => {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-20 3xl:px-0 pb-5 m-auto relative pt-40 w-full flex flex-col gap-2 border-2 border-red-500">
         {/* div container of all data from json */}
         <div className="flex flex-col gap-10">
-
-            {/* check first if the fetch data is an array and used ternary operator to avoid error since .map() only iterate arrays and if not, will have an error   */}
+          {/* check first if the fetch data is an array and used ternary operator to avoid error since .map() only iterate arrays and if not, will have an error   */}
           {Array.isArray(dataFetchHome) ? (
             dataFetchHome.map((item, key) => {
               return (
@@ -53,7 +58,7 @@ const Home = async () => {
               );
             })
           ) : (
-            <p>Empty Data</p>
+            <p>Sorry! Empty Data</p>
           )}
         </div>
       </div>

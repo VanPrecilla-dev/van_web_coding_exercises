@@ -2,17 +2,24 @@ import React from "react";
 
 //fetch JSON data from an Endpoint,
 async function getAboutData() {
-  const res = await fetch(
-    "https://www.zesty.io/-/instant/7-e93178-vqvclg.json"
-  );
-  const dataFetch = res.json();
 
-  if (res.ok) {
-    console.log("sucess fetch of data");
-    return dataFetch;
-  } else {
-    throw new Error("Failed to fetch Data");
+  try{
+    const res = await fetch(
+      "https://www.zesty.io/-/instant/7-e93178-vqvclg.json"
+    );
+    const dataFetch = res.json();
+  
+    if (res.ok) {
+      console.log("sucess fetch of about data");
+      return dataFetch;
+    } else {
+      console.error("Failed to fetch About Data");
+    }
+
+  }catch(error){
+    console.error("Failed HTTP Fetching About Data", error)
   }
+ 
 }
 
 
@@ -38,7 +45,7 @@ const About = async () => {
         <div
           className="flex flex-col mt-20 gap-3 p-10 break-words text-justify rounded-2xl border border-solid border-red-300 shadow-inner shadow-orange-300"
           dangerouslySetInnerHTML={{
-            __html: dataFetchAbout.data[0].content.page_content,
+            __html: dataFetchAbout ? dataFetchAbout.data[0].content.page_content : "<p>Sorry! Empty Data</p>",
           }}
         ></div>
       </div>
